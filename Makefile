@@ -1,5 +1,5 @@
 PROJECT = aca
-PYTHON_VERSION=3.8
+PYTHON_VERSION=3.7
 venv_name = py${PYTHON_VERSION}-${PROJECT}
 venv = .venv/${venv_name}
 
@@ -28,7 +28,7 @@ create_venv: ${venv}
 
 ${venv}: PYTHON_PREFIX=
 ${venv}: requirements.txt
-	${PYTHON_PREFIX}python3 -m venv ${venv}
+	${PYTHON_PREFIX}python3.7 -m venv ${venv}
 	${_pip} install --upgrade pip --cache .tmp/
 	${_pip} install -r requirements.txt --cache .tmp/
 
